@@ -1,4 +1,4 @@
-# spark-groovy
-Spark with Groovy runtime env.
+# spark-scala-dev
+Spark with Scala runtime env for DEV.
 
 
