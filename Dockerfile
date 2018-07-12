@@ -1,7 +1,7 @@
 FROM wangwii/systemd-sshd-jdk:latest
 LABEL maintainer "Wang Wei - https://github.com/wangwii"
 
-# Prepare yum EPEL repo
+# Upgrade base OS
 RUN yum -y update
 
 # Install Spark(https://spark.apache.org/downloads.html)
@@ -9,7 +9,6 @@ ENV HADOOP_VERSION=2.7
 ENV SPARK_VERSION=2.3.1
 ENV SPARK_PACKAGE="spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}"
 ENV SPARK_HOME="/opt/apache/${SPARK_PACKAGE}"
-
 RUN curl -kL -o "${SPACK_PACKAGE}.tgz" \
             "http://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-${SPARK_VERSION}/${SPARK_PACKAGE}.tgz" && \
         mkdir -p "${SPARK_HOME}" && \
